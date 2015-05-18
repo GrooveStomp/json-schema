@@ -9,7 +9,7 @@ module JSON
         begin
           Addressable::URI.parse(data)
         rescue Addressable::URI::InvalidURIError
-          validation_error(processor, error_message, fragments, current_schema, self, options[:record_errors])
+          validation_error(processor, error_message, fragments, current_schema, self, options[:record_errors], 'json_schema_error_uri_format', :property => fragments.last)
         end
       end
     end
